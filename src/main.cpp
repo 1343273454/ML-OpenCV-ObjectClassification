@@ -282,7 +282,7 @@ cv::Mat calculateLightPattern(cv::Mat img)
 }
 
 bool processInput(const cv::CommandLineParser &p, cv::Mat &out_img,
-                  int &out_method_light, int &out_method_seg)
+                  int &out_method_light)
 {
 
     // if requires hel show
@@ -302,7 +302,7 @@ bool processInput(const cv::CommandLineParser &p, cv::Mat &out_img,
     std::string img_file = p.get<std::string>(0);
     std::string light_pattern_file = p.get<std::string>(1);
     out_method_light = p.get<int>("lightMethod");
-    out_method_seg = p.get<int>("segMethod");
+
     //convert image to the single channel grayscale image
     out_img = cv::imread(img_file,0);
     if (out_img.data == NULL)
@@ -372,13 +372,12 @@ int main(int argc, const char **argv)
     
     cv::Mat img;
     int method_light;
-    int method_seg;
-    if (!processInput(parser, img, method_light, method_seg))
+    if (!processInput(parser, img, method_light))
     {
         return -1;
     }
     std::unique_ptr<PreProcessImg> p;
-    p = std::make_unique<PreProcessImg>(img, light_pattern, method_light, method_seg);
+    p = std::make_unique<PreProcessImg>(img, light_pattern, method_light);
     p->StartPreProcess();
 
 	miw= std::make_shared<MultipleImageWindow>("Main window", 2, 2, cv::WINDOW_AUTOSIZE);

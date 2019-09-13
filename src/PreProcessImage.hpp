@@ -13,8 +13,7 @@ private:
     cv::Mat m_img_threshold;
     
     char m_light_method;
-    char m_segment_method;
-
+    
     // Step 1
     void removeNoise();
     
@@ -26,9 +25,9 @@ private:
 
 
 public:
-    PreProcessImg(cv::Mat &original_img, cv::Mat &light_pattern,char light_method=1,char seg_method=1)
+    PreProcessImg(cv::Mat &original_img, cv::Mat &light_pattern,char light_method=1)
         : m_original_img{original_img}, m_light_pattern{light_pattern},
-        m_light_method{light_method},m_segment_method{seg_method}
+        m_light_method{light_method}
     {
     }
     PreProcessImg(const PreProcessImg &other) = delete;
