@@ -50,5 +50,8 @@ $ ./ObjectDetection <image dir> <light pattern> // for this particular case ./Ob
 
 To specify all input parameteres should be like this: 
 ```sh
-./ObjectDetection ../img/test_noise.pgm ../img/light.pgm -lightMethod=0 -segMethod=2
+./ObjectClassification ../img/test.pgm ../img/pattern.pgm
 ```
+Expected Output 
+
+![Image Prediction ](https://github.com/ederfduran/ML-OpenCV-ObjectClassification/blob/master/img/Output.jpg)
