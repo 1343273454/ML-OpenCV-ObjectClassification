@@ -36,6 +36,18 @@ There are some important things to notice here:
 
 for more information on how to build from source: https://www.learnopencv.com/install-opencv-4-on-macos/
 
+# Project Content 
+
+* /img : Contains all images to test and train our model, also we save the output at the end of the process in that folder.
+* /src/ Source Code
+
+Classes: 
+
+* MultipleImageWindow : Class to set up a multi-window image to show the output of the process.
+* PreProcessImage: Class to do all the pre-process steps for the image( Noise removal, light removal and binarization).
+
+
+
 # Steps to run
 
 On Project folder :
