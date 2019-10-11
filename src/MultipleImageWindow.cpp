@@ -84,4 +84,6 @@ void MultipleImageWindow::render()
 
     // show image
     cv::imshow(this->m_window_title, this->m_canvas);
+    // save image
+    cv::imwrite("../img/Output.jpg",this->m_canvas);
 }
